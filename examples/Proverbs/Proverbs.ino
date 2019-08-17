@@ -32,11 +32,11 @@ void setup() {
 void loop() {
 
   // buffer for decompression
-  // since g option was used to generate Proverbs.h, the buffer can be
-  // just Proverbs0_2_max_len size.
-  // The call to Unishox_0_2_decompress() can be kept inside a function with this buffer
+  // since -G option was used to generate Proverbs.h, the buffer size has to be
+  // atleast Proverbs0_2_max_len * 2).
+  // The call to unishox1_pgm_decompress() can be kept inside a function with this buffer
   // to release it immediately.
-  char out[Proverbs_Uni_max_len];
+  char out[Proverbs_Uni_max_len * 2];
 
   Serial.write("Welcome\n");
   Serial.write("-------\n");
